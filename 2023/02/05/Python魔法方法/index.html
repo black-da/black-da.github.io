@@ -4,31 +4,37 @@
 
 <head>
     
-    <title>Tags：python - czw</title>
+    <title>Python魔法方法 - czw</title>
     <meta charset="UTF-8">
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
     
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <meta property="og:type" content="website">
-<meta property="og:title" content="czw">
-<meta property="og:url" content="http://example.com/tags/python/index.html">
+    <meta name="description" content="魔法方法 魔法方法就是满足了特定条件会自动触发的方法  12345678# __init__：类实例化会触发# __str__:打印对象会触发# __call__:对象()触发类的__call__()。让对象可以像函数一样被调用。类也是对象，类(),类的实例化过程调用元类的__call__。# __new__:在类实例化会触发，它比__init__早,创造对象用的，有点复杂# __del__:de">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python魔法方法">
+<meta property="og:url" content="http://example.com/2023/02/05/Python%E9%AD%94%E6%B3%95%E6%96%B9%E6%B3%95/index.html">
 <meta property="og:site_name" content="czw">
+<meta property="og:description" content="魔法方法 魔法方法就是满足了特定条件会自动触发的方法  12345678# __init__：类实例化会触发# __str__:打印对象会触发# __call__:对象()触发类的__call__()。让对象可以像函数一样被调用。类也是对象，类(),类的实例化过程调用元类的__call__。# __new__:在类实例化会触发，它比__init__早,创造对象用的，有点复杂# __del__:de">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-02-05T06:54:31.563Z">
+<meta property="article:modified_time" content="2023-02-05T06:54:31.673Z">
 <meta property="article:author" content="czw">
+<meta property="article:tag" content="code">
+<meta property="article:tag" content="知识分享">
 <meta name="twitter:card" content="summary">
     
 <link rel="stylesheet" href="/lib/fancybox/fancybox.css">
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1675583478660">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1675583478620">
     
-    <link rel="stylesheet" href="/css/style.css?v=1675583478660">
+    <link rel="stylesheet" href="/css/style.css?v=1675583478620">
 
     
         
-            <link rel="stylesheet" href="/custom.css?v=1675583478660">
+            <link rel="stylesheet" href="/custom.css?v=1675583478620">
         
     
 <meta name="generator" content="Hexo 6.3.0"></head>
@@ -305,19 +311,17 @@
     </div>
     <div id="nexmoe-content">
         <div class="nexmoe-primary">
-            <section class="nexmoe-posts">
-    
-    <div class="nexmoe-post">
-        <a href="/2023/02/05/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
-            
-                <div class="nexmoe-post-cover mdui-ripple absolute" style="padding-top: 39.0625%;"> 
-                    <img src="/pictures/python.png" alt="数据类型" loading="lazy">
-                    <h1>数据类型</h1>
-                </div>
-            
-        </a>
+            <div class="nexmoe-post">
 
-        <div class="nexmoe-post-meta">
+  <article>
+    
+        <div class="nexmoe-post-cover absolute" style="padding-top: 39.0625%;"> 
+            <img src="/pictures/python.png" alt="Python魔法方法" loading="lazy">
+            <h1>Python魔法方法</h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta">
     <div class="nexmoe-rainbow">
         <a class="nexmoefont icon-calendar-fill">2023年02月05日</a>
         
@@ -332,13 +336,45 @@
     
 </div>
 
-        <article>
-            
-        </article>
-    </div>
-    
-</section>
+    <h1 id="魔法方法"><a href="#魔法方法" class="headerlink" title="魔法方法"></a>魔法方法</h1><ul>
+<li>魔法方法就是满足了特定条件会自动触发的方法</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># __init__：类实例化会触发</span></span><br><span class="line"><span class="comment"># __str__:打印对象会触发</span></span><br><span class="line"><span class="comment"># __call__:对象()触发类的__call__()。让对象可以像函数一样被调用。类也是对象，类(),类的实例化过程调用元类的__call__。</span></span><br><span class="line"><span class="comment"># __new__:在类实例化会触发，它比__init__早,创造对象用的，有点复杂</span></span><br><span class="line"><span class="comment"># __del__:del 对象，对象回收的时候触发</span></span><br><span class="line"><span class="comment"># __setattr__,__getattr__:(.拦截方法)，当对象.属性触发--&gt;赋值会调用setattr，取值只有引发AttributeError才会调用getattr</span></span><br><span class="line"><span class="comment"># __getitem__,__setitem__:([]拦截)，当对象[属性]触发--&gt;赋值会调用setitem，取值会调用getitem</span></span><br><span class="line"><span class="comment"># __enter__和__exit__ 上下文管理器</span></span><br></pre></td></tr></table></figure>
 
+<h2 id="setattr，getattr，setitem，getitem演示"><a href="#setattr，getattr，setitem，getitem演示" class="headerlink" title="setattr，getattr，setitem，getitem演示"></a><strong>setattr，getattr，setitem，getitem演示</strong></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># class Person:</span></span><br><span class="line"><span class="comment">#     def __init__(self,name):</span></span><br><span class="line"><span class="comment">#         self.name=name</span></span><br><span class="line"><span class="comment">#     def __setitem__(self, key, value):</span></span><br><span class="line"><span class="comment">#         setattr(self,key,value)  #反射</span></span><br><span class="line"><span class="comment">#     def __getitem__(self, item):</span></span><br><span class="line"><span class="comment">#         return getattr(self,item) # 反射取值</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># p=Person(&#x27;czw&#x27;)</span></span><br><span class="line"><span class="comment"># # p.name=&#x27;ppp&#x27;</span></span><br><span class="line"><span class="comment"># p[&#x27;name&#x27;]=10 # 如何实现 重写__setitem__魔法方法</span></span><br><span class="line"><span class="comment"># # print(p.name)</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># print(p[&#x27;name&#x27;])</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="eq"><a href="#eq" class="headerlink" title="_eq_"></a><strong>_<em>eq</em>_</strong></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self,x,y</span>):</span><br><span class="line">        self.x = x</span><br><span class="line">        self.y = y</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__eq__</span>(<span class="params">self,obj</span>):</span><br><span class="line">        <span class="comment"># 打印出比较的第二个对象的x值</span></span><br><span class="line">        <span class="built_in">print</span>(obj.x)</span><br><span class="line">        <span class="keyword">if</span> self.x +self.y == obj.x+obj.y:</span><br><span class="line">           <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">           <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">a=A(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">b=A(<span class="number">99</span>,<span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(a==b)</span><br><span class="line"><span class="built_in">print</span>(a==<span class="string">&#x27;ddd&#x27;</span>)   <span class="comment"># 当执行==s时，会触发__eq__的执行，并且把b传进去，就是object</span></span><br><span class="line"><span class="comment"># ==后只要是对象，就可以传进去，就是object</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1>
+    <p><img data-fancybox="gallery" src="/pictures/a2.png"  alt="/pictures/a2.png" data-caption="/pictures/a2.png" loading="lazy"></p>
+  </article>
+
+  
+      
+    <div class="nexmoe-post-copyright">
+        <strong>Author：</strong>czw<br>
+        <strong>Link：</strong><a href="http://example.com/2023/02/05/Python%E9%AD%94%E6%B3%95%E6%96%B9%E6%B3%95/" title="http:&#x2F;&#x2F;example.com&#x2F;2023&#x2F;02&#x2F;05&#x2F;Python%E9%AD%94%E6%B3%95%E6%96%B9%E6%B3%95&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;example.com&#x2F;2023&#x2F;02&#x2F;05&#x2F;Python%E9%AD%94%E6%B3%95%E6%96%B9%E6%B3%95&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/code/" rel="tag">code</a> <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E7%9F%A5%E8%AF%86%E5%88%86%E4%BA%AB/" rel="tag">知识分享</a>
+    
+</div>
+
+  
+      <div class="nexmoe-post-footer">
+          
+      </div>
+  
+</div>
             <div class="nexmoe-post-right">
               <div class="nexmoe-fixed">
                   <div class="nexmoe-tool"> 
@@ -346,6 +382,13 @@
                       
                         
                           
+                          
+                              <button class="mdui-fab catalog" style="overflow:unset;">
+                                  <i class="nexmoefont icon-i-catalog"></i>
+                                  <div class="nexmoe-toc">
+                                      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%AD%94%E6%B3%95%E6%96%B9%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">魔法方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#setattr%EF%BC%8Cgetattr%EF%BC%8Csetitem%EF%BC%8Cgetitem%E6%BC%94%E7%A4%BA"><span class="toc-number">1.1.</span> <span class="toc-text">setattr，getattr，setitem，getitem演示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#eq"><span class="toc-number">1.2.</span> <span class="toc-text">_eq_</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text"></span></a></li></ol>
+                                  </div>
+                              </button>
                           
                           
                       
@@ -380,7 +423,7 @@
 
  
 
-<script async src="/js/app.js?v=1675583478660"></script>
+<script async src="/js/app.js?v=1675583478622"></script>
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2058306854838448" crossorigin="anonymous"></script>
 

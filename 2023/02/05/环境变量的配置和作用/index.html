@@ -4,31 +4,37 @@
 
 <head>
     
-    <title>Tags：python - czw</title>
+    <title>环境变量的配置和作用 - czw</title>
     <meta charset="UTF-8">
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
     
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <meta property="og:type" content="website">
-<meta property="og:title" content="czw">
-<meta property="og:url" content="http://example.com/tags/python/index.html">
+    <meta name="description" content="环境变量的作用：Windows中如果你要在命令行中执行某个文件，那么系统会先在目前所在的文件夹中检索看这个文件在不在，在的话就执行；不在的话就在Windows的环境变量(是一个存放着各种文件夹路径的列表)中存放的文件夹下去检索目标文件，找到就执行，还找不到就说找不到了。 重复文件名问题：系统在环境变量存放的文件夹中检索文件时，会按照列表中从上到下的顺序检索文件夹，所以如果2个文件夹里有同名文件，那">
+<meta property="og:type" content="article">
+<meta property="og:title" content="环境变量的配置和作用">
+<meta property="og:url" content="http://example.com/2023/02/05/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%9C%E7%94%A8/index.html">
 <meta property="og:site_name" content="czw">
+<meta property="og:description" content="环境变量的作用：Windows中如果你要在命令行中执行某个文件，那么系统会先在目前所在的文件夹中检索看这个文件在不在，在的话就执行；不在的话就在Windows的环境变量(是一个存放着各种文件夹路径的列表)中存放的文件夹下去检索目标文件，找到就执行，还找不到就说找不到了。 重复文件名问题：系统在环境变量存放的文件夹中检索文件时，会按照列表中从上到下的顺序检索文件夹，所以如果2个文件夹里有同名文件，那">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-02-05T07:02:40.643Z">
+<meta property="article:modified_time" content="2023-02-05T07:02:40.760Z">
 <meta property="article:author" content="czw">
+<meta property="article:tag" content="code">
+<meta property="article:tag" content="知识分享">
 <meta name="twitter:card" content="summary">
     
 <link rel="stylesheet" href="/lib/fancybox/fancybox.css">
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1675583478660">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1675583478607">
     
-    <link rel="stylesheet" href="/css/style.css?v=1675583478660">
+    <link rel="stylesheet" href="/css/style.css?v=1675583478607">
 
     
         
-            <link rel="stylesheet" href="/custom.css?v=1675583478660">
+            <link rel="stylesheet" href="/custom.css?v=1675583478607">
         
     
 <meta name="generator" content="Hexo 6.3.0"></head>
@@ -305,23 +311,21 @@
     </div>
     <div id="nexmoe-content">
         <div class="nexmoe-primary">
-            <section class="nexmoe-posts">
-    
-    <div class="nexmoe-post">
-        <a href="/2023/02/05/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
-            
-                <div class="nexmoe-post-cover mdui-ripple absolute" style="padding-top: 39.0625%;"> 
-                    <img src="/pictures/python.png" alt="数据类型" loading="lazy">
-                    <h1>数据类型</h1>
-                </div>
-            
-        </a>
+            <div class="nexmoe-post">
 
-        <div class="nexmoe-post-meta">
+  <article>
+    
+        <div class="nexmoe-post-cover absolute" style="padding-top: 39.0625%;"> 
+            <img src="/pictures/a3.jpg" alt="环境变量的配置和作用" loading="lazy">
+            <h1>环境变量的配置和作用</h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta">
     <div class="nexmoe-rainbow">
         <a class="nexmoefont icon-calendar-fill">2023年02月05日</a>
         
-            <a class="nexmoefont icon-appstore-fill -link" href="/categories/code/">code</a><a class="nexmoefont icon-appstore-fill -link" href="/categories/code/python/">python</a>
+            <a class="nexmoefont icon-appstore-fill -link" href="/categories/code/">code</a><a class="nexmoefont icon-appstore-fill -link" href="/categories/code/windows/">windows</a>
         
         
     </div>
@@ -332,13 +336,39 @@
     
 </div>
 
-        <article>
-            
-        </article>
-    </div>
-    
-</section>
+    <h1 id="环境变量的作用："><a href="#环境变量的作用：" class="headerlink" title="环境变量的作用："></a>环境变量的作用：</h1><p>Windows中如果你要在命令行中执行某个文件，那么系统会先在目前所在的文件夹中检索看这个文件在不在，在的话就执行；不在的话就在Windows的环境变量(是一个存放着各种文件夹路径的列表)中存放的文件夹下去检索目标文件，找到就执行，还找不到就说找不到了。</p>
+<p>重复文件名问题：系统在环境变量存放的文件夹中检索文件时，会按照列表中从上到下的顺序检索文件夹，所以如果2个文件夹里有同名文件，那么系统只会找到存放在上面的那个文件夹的文件执行。解决方案是：各复制一份这个重复名字的文件的副本，再分别进行重命名(直接改名字而不复制可能会受到限制不给重命名)</p>
+<p>环境变量的设置：我的电脑-》属性-》高级系统设置-》环境变量-》添加新的文件夹路径(比如C:\)</p>
 
+    <p><img data-fancybox="gallery" src="/pictures/a2.png"  alt="/pictures/a2.png" data-caption="/pictures/a2.png" loading="lazy"></p>
+  </article>
+
+  
+      
+    <div class="nexmoe-post-copyright">
+        <strong>Author：</strong>czw<br>
+        <strong>Link：</strong><a href="http://example.com/2023/02/05/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%9C%E7%94%A8/" title="http:&#x2F;&#x2F;example.com&#x2F;2023&#x2F;02&#x2F;05&#x2F;%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%9C%E7%94%A8&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;example.com&#x2F;2023&#x2F;02&#x2F;05&#x2F;%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%9C%E7%94%A8&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/code/" rel="tag">code</a> <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E7%9F%A5%E8%AF%86%E5%88%86%E4%BA%AB/" rel="tag">知识分享</a>
+    
+</div>
+
+  
+      <div class="nexmoe-post-footer">
+          
+      </div>
+  
+</div>
             <div class="nexmoe-post-right">
               <div class="nexmoe-fixed">
                   <div class="nexmoe-tool"> 
@@ -346,6 +376,13 @@
                       
                         
                           
+                          
+                              <button class="mdui-fab catalog" style="overflow:unset;">
+                                  <i class="nexmoefont icon-i-catalog"></i>
+                                  <div class="nexmoe-toc">
+                                      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E7%9A%84%E4%BD%9C%E7%94%A8%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">环境变量的作用：</span></a></li></ol>
+                                  </div>
+                              </button>
                           
                           
                       
@@ -380,7 +417,7 @@
 
  
 
-<script async src="/js/app.js?v=1675583478660"></script>
+<script async src="/js/app.js?v=1675583478608"></script>
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2058306854838448" crossorigin="anonymous"></script>
 

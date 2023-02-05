@@ -4,31 +4,37 @@
 
 <head>
     
-    <title>Tags：python - czw</title>
+    <title>包和模块的导入 - czw</title>
     <meta charset="UTF-8">
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
     
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <meta property="og:type" content="website">
-<meta property="og:title" content="czw">
-<meta property="og:url" content="http://example.com/tags/python/index.html">
+    <meta name="description" content="包的导入12345678910111213141516171819202122232425262728293031323334&amp;#x27;&amp;#x27;&amp;#x27;1、包就是一个包含有__init__.py文件的文件夹2、为何要有包    包的本质是模块的一种形式，包是用来被当做模块导入&amp;#x27;&amp;#x27;&amp;#x27;导入包实际的运行情况#1、产生一个名称空间#2、运行包下的__init__.p">
+<meta property="og:type" content="article">
+<meta property="og:title" content="包和模块的导入">
+<meta property="og:url" content="http://example.com/2023/02/05/%E5%8C%85%E5%92%8C%E6%A8%A1%E5%9D%97%E7%9A%84%E5%AF%BC%E5%85%A5/index.html">
 <meta property="og:site_name" content="czw">
+<meta property="og:description" content="包的导入12345678910111213141516171819202122232425262728293031323334&amp;#x27;&amp;#x27;&amp;#x27;1、包就是一个包含有__init__.py文件的文件夹2、为何要有包    包的本质是模块的一种形式，包是用来被当做模块导入&amp;#x27;&amp;#x27;&amp;#x27;导入包实际的运行情况#1、产生一个名称空间#2、运行包下的__init__.p">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-02-05T06:56:03.637Z">
+<meta property="article:modified_time" content="2023-02-05T06:56:03.745Z">
 <meta property="article:author" content="czw">
+<meta property="article:tag" content="code">
+<meta property="article:tag" content="知识分享">
 <meta name="twitter:card" content="summary">
     
 <link rel="stylesheet" href="/lib/fancybox/fancybox.css">
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1675583478660">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1675583478618">
     
-    <link rel="stylesheet" href="/css/style.css?v=1675583478660">
+    <link rel="stylesheet" href="/css/style.css?v=1675583478618">
 
     
         
-            <link rel="stylesheet" href="/custom.css?v=1675583478660">
+            <link rel="stylesheet" href="/custom.css?v=1675583478618">
         
     
 <meta name="generator" content="Hexo 6.3.0"></head>
@@ -305,19 +311,17 @@
     </div>
     <div id="nexmoe-content">
         <div class="nexmoe-primary">
-            <section class="nexmoe-posts">
-    
-    <div class="nexmoe-post">
-        <a href="/2023/02/05/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
-            
-                <div class="nexmoe-post-cover mdui-ripple absolute" style="padding-top: 39.0625%;"> 
-                    <img src="/pictures/python.png" alt="数据类型" loading="lazy">
-                    <h1>数据类型</h1>
-                </div>
-            
-        </a>
+            <div class="nexmoe-post">
 
-        <div class="nexmoe-post-meta">
+  <article>
+    
+        <div class="nexmoe-post-cover absolute" style="padding-top: 39.0625%;"> 
+            <img src="/pictures/python.png" alt="包和模块的导入" loading="lazy">
+            <h1>包和模块的导入</h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta">
     <div class="nexmoe-rainbow">
         <a class="nexmoefont icon-calendar-fill">2023年02月05日</a>
         
@@ -332,13 +336,53 @@
     
 </div>
 
-        <article>
-            
-        </article>
-    </div>
-    
-</section>
+    <h1 id="包的导入"><a href="#包的导入" class="headerlink" title="包的导入"></a>包的导入</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">1、包就是一个包含有__init__.py文件的文件夹</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">2、为何要有包</span></span><br><span class="line"><span class="string">    包的本质是模块的一种形式，包是用来被当做模块导入</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line">导入包实际的运行情况</span><br><span class="line"><span class="comment">#1、产生一个名称空间</span></span><br><span class="line"><span class="comment">#2、运行包下的__init__.py文件（如果导入的是模块就是运行模块名.py文件），将运行过程中产生的名字都丢到1的名称空间中</span></span><br><span class="line"><span class="comment">#3、在当前执行文件的名称空间中拿到一个名字‘模块名’，‘模块名’指向1的名称空间</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># from mmm import x</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 环境变量是以执行文件为基准的，所有的被导入的模块或者说后续的其他文件引用的sys.path都是参照执行文件的sys.path，即path的第一个元素都是执行文件所在的文件夹的路径</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 强调：</span></span><br><span class="line"><span class="comment"># 1.关于包相关的导入语句也分为import和from ... import ...两种，但是无论哪种，无论在什么位置，在导入时都必须遵循一个原则：</span></span><br><span class="line"><span class="comment"># 凡是在导入时带点的，点的左边都必须是一个包，否则非法。</span></span><br><span class="line"><span class="comment"># 可以带有一连串的点，如import 顶级包.子包.子模块,但都必须遵循这个原则。但对于导入后，在使用时就没有这种限制了，点的左边可以是包,模块，函数，类(它们都可以用点的方式调用自己的属性)。</span></span><br><span class="line"><span class="comment"># 例如：</span></span><br><span class="line"><span class="comment"># from a.b.c.d.e.f import xxx</span></span><br><span class="line"><span class="comment"># import a.b.c.d.e.f</span></span><br><span class="line"><span class="comment"># 其中a、b、c、d、e 都必须是包</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2、包A和包B下有同名模块也不会冲突，如A.a与B.a来自俩个命名空间</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># 3、import导入文件时，产生名称空间中的名字来源于文件，</span></span><br><span class="line"><span class="comment"># import 包，产生的名称空间的名字同样来源于文件，即包下的__init__.py，导入包本质就是在导入该文件</span></span><br><span class="line"></span><br><span class="line">相对导入：.表示当前文件所在文件夹。..表示上一层文件夹。相对导入一般用于包内模块的相互引用</span><br><span class="line"><span class="keyword">from</span> .mm <span class="keyword">import</span> f1</span><br><span class="line">表示导入位于当前文件所在文件夹的mm.py中的函数f1</span><br></pre></td></tr></table></figure>
 
+<h1 id="模块操作-包的操作同理-："><a href="#模块操作-包的操作同理-：" class="headerlink" title="模块操作(包的操作同理)："></a>模块操作(包的操作同理)：</h1><ol>
+<li><p>导入模块：</p>
+<p>a)    全部导入：import moduleName</p>
+<p>b)   从模块种导入指定函数：from module impore func1(,func2….)</p>
+</li>
+<li><p>Python在查找模块导入时，遵循以下查找顺序：</p>
+<p>a)    先查找内存中已经加载好的模块</p>
+<p>b)   再查找python的内置模块</p>
+<p>c)    最后查找sys.path路径中包含的模块</p>
+</li>
+<li><p>对system..path的操作：</p>
+<p>a)    sys.path是一个列表，它的第一个路径是当前执行文件所在的文件夹</p>
+<p>b)   如果要将不存在于该文件夹的模块导入，要将该模块的路径添加到system.path。<br> 如将func3导入文件：<br> import sys<br> sys.path.append(“func3的路径比如桌面：C:\Users\Desktop”)#导入后，python会在你导入func3时在该路径下查找func3的文件<br> import func3</p>
+</li>
+</ol>
+
+    <p><img data-fancybox="gallery" src="/pictures/a2.png"  alt="/pictures/a2.png" data-caption="/pictures/a2.png" loading="lazy"></p>
+  </article>
+
+  
+      
+    <div class="nexmoe-post-copyright">
+        <strong>Author：</strong>czw<br>
+        <strong>Link：</strong><a href="http://example.com/2023/02/05/%E5%8C%85%E5%92%8C%E6%A8%A1%E5%9D%97%E7%9A%84%E5%AF%BC%E5%85%A5/" title="http:&#x2F;&#x2F;example.com&#x2F;2023&#x2F;02&#x2F;05&#x2F;%E5%8C%85%E5%92%8C%E6%A8%A1%E5%9D%97%E7%9A%84%E5%AF%BC%E5%85%A5&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;example.com&#x2F;2023&#x2F;02&#x2F;05&#x2F;%E5%8C%85%E5%92%8C%E6%A8%A1%E5%9D%97%E7%9A%84%E5%AF%BC%E5%85%A5&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/code/" rel="tag">code</a> <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E7%9F%A5%E8%AF%86%E5%88%86%E4%BA%AB/" rel="tag">知识分享</a>
+    
+</div>
+
+  
+      <div class="nexmoe-post-footer">
+          
+      </div>
+  
+</div>
             <div class="nexmoe-post-right">
               <div class="nexmoe-fixed">
                   <div class="nexmoe-tool"> 
@@ -346,6 +390,13 @@
                       
                         
                           
+                          
+                              <button class="mdui-fab catalog" style="overflow:unset;">
+                                  <i class="nexmoefont icon-i-catalog"></i>
+                                  <div class="nexmoe-toc">
+                                      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8C%85%E7%9A%84%E5%AF%BC%E5%85%A5"><span class="toc-number">1.</span> <span class="toc-text">包的导入</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97%E6%93%8D%E4%BD%9C-%E5%8C%85%E7%9A%84%E6%93%8D%E4%BD%9C%E5%90%8C%E7%90%86-%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">模块操作(包的操作同理)：</span></a></li></ol>
+                                  </div>
+                              </button>
                           
                           
                       
@@ -380,7 +431,7 @@
 
  
 
-<script async src="/js/app.js?v=1675583478660"></script>
+<script async src="/js/app.js?v=1675583478619"></script>
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2058306854838448" crossorigin="anonymous"></script>
 

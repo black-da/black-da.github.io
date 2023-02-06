@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    
+    <title>Django数据库操作 - czw</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="pycharm链接数据库(MySQL)123456三个位置查找数据库相关	右侧上方database	左下方database	配置里面的plugins插件搜索安装	需要提前创建好库  django链接数据库(MySQL)12345678910111213141516171819202122232425262728# 默认用的是sqlite3DATABASES &#x3D; &amp;#123;    &amp;#x27;de">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Django数据库操作">
+<meta property="og:url" content="http://example.com/2023/02/06/Django%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/index.html">
+<meta property="og:site_name" content="czw">
+<meta property="og:description" content="pycharm链接数据库(MySQL)123456三个位置查找数据库相关	右侧上方database	左下方database	配置里面的plugins插件搜索安装	需要提前创建好库  django链接数据库(MySQL)12345678910111213141516171819202122232425262728# 默认用的是sqlite3DATABASES &#x3D; &amp;#123;    &amp;#x27;de">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-02-06T09:16:46.016Z">
+<meta property="article:modified_time" content="2023-02-06T09:23:37.682Z">
+<meta property="article:author" content="czw">
+<meta property="article:tag" content="code">
+<meta property="article:tag" content="知识分享">
+<meta name="twitter:card" content="summary">
+    
+<link rel="stylesheet" href="/lib/fancybox/fancybox.css">
+<link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
+
+
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1675675439464">
+    
+    <link rel="stylesheet" href="/css/style.css?v=1675675439464">
+
+    
+        
+            <link rel="stylesheet" href="/custom.css?v=1675675439464">
+        
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="mdui-drawer-body-left">
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" style="background-image: url(/pictures/a1.jpg)"></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="czw" class="mdui-btn mdui-btn-icon"><img src="https://avatars.githubusercontent.com/u/88929041?s=400&amp;u=59bb1180edea8ab8a6918f927a2640ae391b8d15&amp;v=4" alt="czw"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="czw">
+            <img src="https://avatars.githubusercontent.com/u/88929041?s=400&amp;u=59bb1180edea8ab8a6918f927a2640ae391b8d15&amp;v=4" alt="czw" alt="czw">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>Articles</span>14</div>
+        <div><span>Tags</span>6</div>
+        <div><span>Categories</span>6</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archives.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/donate.html" title="给我赞助">
+            <i class="mdui-list-item-icon nexmoefont icon-coffee"></i>
+            <div class="mdui-list-item-content">
+                给我赞助
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于博主">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博主
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+    
+        
+        
+        <div class="nexmoe-widget-wrap">
+	<div class="nexmoe-widget nexmoe-social">
+		<a
+			class="mdui-ripple"
+			href="https://github.com/black-da"
+			target="_blank"
+			mdui-tooltip="{content: 'GitHub'}"
+			style="
+				color: rgb(25, 23, 23);
+				background-color: rgba(25, 23, 23, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-github"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="/wechat.jpg"
+			target="_blank"
+			mdui-tooltip="{content: '微信'}"
+			style="
+				color: rgb(100, 230, 34);
+				background-color: rgba(247, 132, 34, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-wechat-fill"
+			></i> </a
+		>
+	</div>
+</div>
+
+    
+        
+        
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">Categories</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/code/">code</a>
+          <span class="category-list-count">12</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/code/python/django/">django</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/code/python/">python</a>
+          <span class="category-list-count">11</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/test/">test</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/code/windows/">windows</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/教程/">教程</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+    
+        
+        
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/Games/" style="font-size: 10px;">Games</a> <a href="/tags/code/" style="font-size: 20px;">code</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/system/" style="font-size: 10px;">system</a> <a href="/tags/%E7%9F%A5%E8%AF%86%E5%88%86%E4%BA%AB/" style="font-size: 15px;">知识分享</a>
+    </div>
+    
+      <script>
+        var maxTagcloud = parseInt(17);
+        var tags_length = parseInt(6);
+        var tags_arr = [];
+        for(var i = 0; i < tags_length; i++){
+          tags_arr.push(i);
+        }
+        tags_arr.sort(function (l, r) {
+          return Math.random() > 0.5 ? -1 : 1;
+        });
+        tags_arr = tags_arr.slice(0, maxTagcloud < tags_length ? tags_length - maxTagcloud : 0);
+        for(var tag_i = 0; tag_i < tags_arr.length; tag_i++){
+          document.getElementById("randomtagcloud").children[tags_arr[tag_i]].style.display = 'none';
+        }
+      </script>
+    
+  </div>
+
+    
+        
+        
+        
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">Archive</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">14</span></li></ul>
+    </div>
+  </div>
+
+
+
+    
+        
+        
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">Recent Posts</h3>
+    <div class="nexmoe-widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/02/06/Django%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/">Django数据库操作</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/05/Django%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%90%AD%E5%BB%BA/">Django项目的搭建和配置</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/05/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%9C%E7%94%A8/">环境变量的配置和作用</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/05/Python%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/">Python内置函数</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/05/Python%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97/">Python常用模块</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+        
+        <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-link">
+		<ul>
+        
+            <li>
+                <a href="https://blog.csdn.net/weixin_52709752?type=blog" target="_blank" >
+                    <img src="/pictures/CSDN.png" alt="CSDN"></img>
+                    <p>CSDN</p>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://leetcode.cn/u/happy-svvartzu16/" target="_blank" >
+                    <img src="/pictures/leetcode.png" alt="Leetcode"></img>
+                    <p>Leetcode</p>
+                </a>
+            </li>
+        
+		</ul>
+    </div>
+</div>
+<style>
+.nexmoe-widget-wrap .nexmoe-link ul li a {
+    text-align : center;
+}
+.nexmoe-widget-wrap .nexmoe-link ul li a img {
+    max-width : 100%;
+}
+.nexmoe-widget-wrap .nexmoe-link ul li a p {
+    margin: 10px 0;
+}
+</style>
+
+    
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2023 czw
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+            <div class="nexmoe-post">
+
+  <article>
+    
+        <div class="nexmoe-post-cover absolute" style="padding-top: 38.333333333333336%;"> 
+            <img src="/pictures/django.jpg" alt="Django数据库操作" loading="lazy">
+            <h1>Django数据库操作</h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta">
+    <div class="nexmoe-rainbow">
+        <a class="nexmoefont icon-calendar-fill">2023年02月06日</a>
+        
+            <a class="nexmoefont icon-appstore-fill -link" href="/categories/code/">code</a><a class="nexmoefont icon-appstore-fill -link" href="/categories/code/python/">python</a><a class="nexmoefont icon-appstore-fill -link" href="/categories/code/python/django/">django</a>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+    <h3 id="pycharm链接数据库-MySQL"><a href="#pycharm链接数据库-MySQL" class="headerlink" title="pycharm链接数据库(MySQL)"></a>pycharm链接数据库(MySQL)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">三个位置查找数据库相关</span><br><span class="line">	右侧上方database</span><br><span class="line">	左下方database</span><br><span class="line">	配置里面的plugins插件搜索安装</span><br><span class="line"></span><br><span class="line">	需要提前创建好库</span><br></pre></td></tr></table></figure>
+
+<h3 id="django链接数据库-MySQL"><a href="#django链接数据库-MySQL" class="headerlink" title="django链接数据库(MySQL)"></a>django链接数据库(MySQL)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 默认用的是sqlite3</span></span><br><span class="line">DATABASES = &#123;</span><br><span class="line">    <span class="string">&#x27;default&#x27;</span>: &#123;</span><br><span class="line">        <span class="string">&#x27;ENGINE&#x27;</span>: <span class="string">&#x27;django.db.backends.sqlite3&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;NAME&#x27;</span>: os.path.join(BASE_DIR, <span class="string">&#x27;db.sqlite3&#x27;</span>),</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># django链接MySQL</span></span><br><span class="line">	<span class="number">1.</span>第一步配置文件中配置</span><br><span class="line">  	DATABASES = &#123;</span><br><span class="line">    <span class="string">&#x27;default&#x27;</span>: &#123;</span><br><span class="line">        <span class="string">&#x27;ENGINE&#x27;</span>: <span class="string">&#x27;django.db.backends.mysql&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;NAME&#x27;</span>: <span class="string">&#x27;day60&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;USER&#x27;</span>:<span class="string">&#x27;root&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;PASSWORD&#x27;</span>:<span class="string">&#x27;admin123&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;HOST&#x27;</span>:<span class="string">&#x27;127.0.0.1&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;PORT&#x27;</span>:<span class="number">3306</span>,</span><br><span class="line">        <span class="string">&#x27;CHARSET&#x27;</span>:<span class="string">&#x27;utf8&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">  <span class="number">2.</span>代码声明	</span><br><span class="line">  	django默认用的是mysqldb模块链接MySQL</span><br><span class="line">    但是该模块的兼容性不好 需要手动改为用pymysql链接</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 在项目名下的init或者任意的应用名下的init文件中书写以下代码都可以</span></span><br><span class="line">    <span class="keyword">import</span> pymysql</span><br><span class="line">	pymysql.install_as_MySQLdb()</span><br></pre></td></tr></table></figure>
+
+<h3 id="Django-ORM、表的建立"><a href="#Django-ORM、表的建立" class="headerlink" title="Django ORM、表的建立"></a>Django ORM、表的建立</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">ORM. 对象关系映射</span></span><br><span class="line"><span class="string">作用:能够让一个不用sql语句的小白也能够通过python 面向对象的代码简单快捷的操作数据库</span></span><br><span class="line"><span class="string">不足之处:封装程度太高 有时候sql语句的效率偏低 需要你自己写SQL语句</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">应用下面的models.py文件</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1 先去models.py中书写一个类</span></span><br><span class="line">	<span class="keyword">class</span> <span class="title class_">User</span>(models.Model):<span class="comment">#这里得继承，别忘了</span></span><br><span class="line">    <span class="comment"># id int primary_key auto_increment</span></span><br><span class="line">    <span class="built_in">id</span> = models.AutoField(primary_key=<span class="literal">True</span>)</span><br><span class="line">    <span class="comment"># username varchar(32)</span></span><br><span class="line">    username = models.CharField(max_length=<span class="number">32</span>)</span><br><span class="line">    <span class="comment"># password int</span></span><br><span class="line">    password = models.IntegerField()</span><br><span class="line"></span><br><span class="line">*************************<span class="comment"># 2 数据库迁移命令*************************</span></span><br><span class="line">python3 manage.py makemigrations 将操作记录记录到migrations文件夹中</span><br><span class="line">python3 manage.py migrate  将操作真正的同步到数据库中</span><br><span class="line"><span class="comment"># 只要你修改了models.py中跟数据库相关的代码 就必须重新执行上述的两条命令</span></span><br><span class="line">******************************************************************</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">User</span>(models.Model):</span><br><span class="line">    <span class="comment"># id int primary_key auto_increment</span></span><br><span class="line">    <span class="built_in">id</span> = models.AutoField(primary_key=<span class="literal">True</span>,verbose_name=<span class="string">&#x27;主键&#x27;</span>)</span><br><span class="line">    <span class="comment"># username varchar(32)</span></span><br><span class="line">    username = models.CharField(max_length=<span class="number">32</span>,verbose_name=<span class="string">&#x27;用户名&#x27;</span>)</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    CharField必须要指定max_length参数 不指定会直接报错</span></span><br><span class="line"><span class="string">    verbose_name该参数是所有字段都有的 就是用来对字段的解释</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># password int</span></span><br><span class="line">    password = models.IntegerField(verbose_name=<span class="string">&#x27;密码&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Author</span>(models.Model):</span><br><span class="line">    <span class="comment"># 由于一张表中必须要有一个主键字段 并且一般情况下都叫id字段</span></span><br><span class="line">    <span class="comment"># 所以orm当你不定义主键字段的时候 orm会自动帮你创建一个名为id主键字段</span></span><br><span class="line">    <span class="comment"># 也就意味着 后续我们在创建模型表的时候如果主键字段名没有额外的叫法 那么主键字段可以省略不写</span></span><br><span class="line">    <span class="comment"># username varchar(32)</span></span><br><span class="line">    username = models.CharField(max_length=<span class="number">32</span>)</span><br><span class="line">    <span class="comment"># password int</span></span><br><span class="line">    password = models.IntegerField()</span><br></pre></td></tr></table></figure>
+
+<h3 id="字段的增删改查"><a href="#字段的增删改查" class="headerlink" title="字段的增删改查"></a>字段的增删改查</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 字段的增加</span></span><br><span class="line"><span class="number">1.</span>可以在终端内直接给出默认值</span><br><span class="line"><span class="number">2.</span>该字段可以为空</span><br><span class="line">    info = models.CharField(max_length=<span class="number">32</span>,verbose_name=<span class="string">&#x27;个人简介&#x27;</span>,null=<span class="literal">True</span>)</span><br><span class="line"><span class="number">3.</span>直接给字段设置默认值</span><br><span class="line">    hobby = models.CharField(max_length=<span class="number">32</span>,verbose_name=<span class="string">&#x27;兴趣爱好&#x27;</span>,default=<span class="string">&#x27;study&#x27;</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 字段的修改</span></span><br><span class="line">	直接修改代码然后执行数据库迁移的两条命令即可</span><br><span class="line"></span><br><span class="line"><span class="comment"># 字段的删</span></span><br><span class="line">	直接注释对应的字段然后执行数据库迁移的两条命令即可</span><br><span class="line">  执行完毕之后字段对应的数据也都没有了</span><br><span class="line">  </span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">在操作models.py的时候一定要细心</span></span><br><span class="line"><span class="string">	千万不要注释一些字段</span></span><br><span class="line"><span class="string">	执行迁移命令之前最好先检查一下自己写的代码</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="数据的增删改查"><a href="#数据的增删改查" class="headerlink" title="数据的增删改查"></a>数据的增删改查</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查</span></span><br><span class="line">res = models.User.objects.<span class="built_in">filter</span>(username=username)</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">返回值你先看成是列表套数据对象的格式</span></span><br><span class="line"><span class="string">它也支持索引取值 切片操作 但是不支持负数索引</span></span><br><span class="line"><span class="string">它也不推荐你使用索引的方式取值</span></span><br><span class="line"><span class="string">user_obj = models.User.objects.filter(username=username).first()取到的是与记录相关的对象的列表的第一个元素，可以通过user_obj.username 或 user_obj.password (user_obj.字段名)取到对应的属性</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="built_in">filter</span>括号内可以携带多个参数 参数与参数之间默认是<span class="keyword">and</span>关系</span><br><span class="line">你可以把<span class="built_in">filter</span>联想成where记忆</span><br><span class="line">如果符合条件的有多条记录，那么user_obj列表中的元素就有多个，可以通过索引取值</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 增</span></span><br><span class="line"><span class="keyword">from</span> app01 <span class="keyword">import</span> models</span><br><span class="line">res = models.User.objects.create(username=username,password=password)</span><br><span class="line"><span class="comment"># 返回值就是当前被创建的对象本身</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 第二种增加</span></span><br><span class="line">user_obj = models.User(username=username,password=password)</span><br><span class="line">user_obj.save()  <span class="comment"># 保存数据</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改数据方式1</span></span><br><span class="line">models.User.objects.<span class="built_in">filter</span>(<span class="built_in">id</span>=edit_id).update(username=username,password=password)</span><br><span class="line">将<span class="built_in">filter</span>查询出来的列表中所有的对象全部更新            批量更新操作</span><br><span class="line">只修改被修改的字段</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改数据方式2</span></span><br><span class="line">edit_obj.username = username</span><br><span class="line">edit_obj.password= password</span><br><span class="line">edit_obj.save()</span><br><span class="line">上述方法当字段特别多的时候效率会非常的低，因为它从头到尾将数据的所有字段全部更新一遍，无论该字段是否被修改</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#删</span></span><br><span class="line">models.User.objects.<span class="built_in">filter</span>(<span class="built_in">id</span>=delete_id).delete()</span><br></pre></td></tr></table></figure>
+
+<h3 id="django-orm中如何创建表关系"><a href="#django-orm中如何创建表关系" class="headerlink" title="django orm中如何创建表关系"></a>django orm中如何创建表关系</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">表与表之间的关系</span></span><br><span class="line"><span class="string">	一对多</span></span><br><span class="line"><span class="string">	多对多</span></span><br><span class="line"><span class="string">	一对一</span></span><br><span class="line"><span class="string">	没有关系</span></span><br><span class="line"><span class="string">判断表关系的方法:换位思考</span></span><br><span class="line"><span class="string">若1个a对应多个b，1个b对应1个a，那么a和b就是1对多，且多的一方是b</span></span><br><span class="line"><span class="string">若1个a对应多个b，1个b对应多个a，那么a和b就是多对多</span></span><br><span class="line"><span class="string">若1个a对应1个b，1个b对应1个a，那么a和b就是1对1</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">图书表</span><br><span class="line">出版社表</span><br><span class="line">作者表</span><br><span class="line">作者详情表</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">图书和出版社是一对多的关系 外键字段建在多的那一方 book</span></span><br><span class="line"><span class="string">图书和作者是多对多的关系 需要创建第三张表来专门存储</span></span><br><span class="line"><span class="string">作者与作者详情表是一对一</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">models.py的代码如下</span><br><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</span><br><span class="line"><span class="comment"># 创建表关系  先将基表创建出来 然后再添加外键字段</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Book</span>(models.Model):</span><br><span class="line">    title = models.CharField(max_length=<span class="number">32</span>)</span><br><span class="line">    price = models.DecimalField(max_digits=<span class="number">8</span>,decimal_places=<span class="number">2</span>)<span class="comment"># 总共八位 小数点后面占两位</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    图书和出版社是一对多 并且书是多的一方 所以外键字段放在书表里面</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    publish = models.ForeignKey(to=<span class="string">&#x27;Publish&#x27;</span>)  <span class="comment"># 默认就是与出版社表的主键字段做外键关联</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    如果字段对应的是ForeignKey 那么会orm会自动在字段的后面加_id</span></span><br><span class="line"><span class="string">    如果你加了_id那么orm还是会在后面继续加_id，变成name_id_id了，所以在定义ForeignKey的时候就不要自己加_id</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    图书和作者是多对多的关系 外键字段建在任意一方均可 但是推荐你建在查询频率较高的一方</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    authors = models.ManyToManyField(to=<span class="string">&#x27;Author&#x27;</span>)</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    authors是一个虚拟字段 主要是用来告诉orm 书籍表和作者表是多对多关系</span></span><br><span class="line"><span class="string">    让orm自动帮你创建第三张关系表</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Publish</span>(models.Model):</span><br><span class="line">    name = models.CharField(max_length=<span class="number">32</span>)</span><br><span class="line">    addr = models.CharField(max_length=<span class="number">32</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Author</span>(models.Model):</span><br><span class="line">    name = models.CharField(max_length=<span class="number">32</span>)</span><br><span class="line">    age = models.IntegerField()</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    作者与作者详情是一对一的关系 外键字段建在任意一方都可以 但是推荐你建在查询频率较高的表中</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    author_detail = models.OneToOneField(to=<span class="string">&#x27;AuthorDetail&#x27;</span>)</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    OneToOneField也会自动给字段加_id后缀</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">AuthorDetail</span>(models.Model):</span><br><span class="line">    phone = models.BigIntegerField()  <span class="comment"># 或者直接字符类型</span></span><br><span class="line">    addr = models.CharField(max_length=<span class="number">32</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">	orm中如何定义三种关系</span></span><br><span class="line"><span class="string">		publish = models.ForeignKey(to=&#x27;Publish&#x27;)  # 默认就是与出版社表的主键字段做外键关联</span></span><br><span class="line"><span class="string">		authors = models.ManyToManyField(to=&#x27;Author&#x27;)</span></span><br><span class="line"><span class="string">		author_detail = models.OneToOneField(to=&#x27;AuthorDetail&#x27;)</span></span><br><span class="line"><span class="string">		</span></span><br><span class="line"><span class="string">		ForeignKey、OneToOneField会自动在字段后面加_id后缀</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="comment"># 在django1.X版本中外键默认都是级联更新删除的</span></span><br></pre></td></tr></table></figure>
+
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3>
+    <p><img data-fancybox="gallery" src="/pictures/a2.png"  alt="/pictures/a2.png" data-caption="/pictures/a2.png" loading="lazy"></p>
+  </article>
+
+  
+      
+    <div class="nexmoe-post-copyright">
+        <strong>Author：</strong>czw<br>
+        <strong>Link：</strong><a href="http://example.com/2023/02/06/Django%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/" title="http:&#x2F;&#x2F;example.com&#x2F;2023&#x2F;02&#x2F;06&#x2F;Django%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;example.com&#x2F;2023&#x2F;02&#x2F;06&#x2F;Django%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+        
+    </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/code/" rel="tag">code</a> <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E7%9F%A5%E8%AF%86%E5%88%86%E4%BA%AB/" rel="tag">知识分享</a>
+    
+</div>
+
+  
+      <div class="nexmoe-post-footer">
+          
+      </div>
+  
+</div>
+            <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                        
+                          
+                          
+                              <button class="mdui-fab catalog" style="overflow:unset;">
+                                  <i class="nexmoefont icon-i-catalog"></i>
+                                  <div class="nexmoe-toc">
+                                      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#pycharm%E9%93%BE%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93-MySQL"><span class="toc-number">1.</span> <span class="toc-text">pycharm链接数据库(MySQL)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#django%E9%93%BE%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93-MySQL"><span class="toc-number">2.</span> <span class="toc-text">django链接数据库(MySQL)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Django-ORM%E3%80%81%E8%A1%A8%E7%9A%84%E5%BB%BA%E7%AB%8B"><span class="toc-number">3.</span> <span class="toc-text">Django ORM、表的建立</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E6%AE%B5%E7%9A%84%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5"><span class="toc-number">4.</span> <span class="toc-text">字段的增删改查</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%9A%84%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5"><span class="toc-number">5.</span> <span class="toc-text">数据的增删改查</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#django-orm%E4%B8%AD%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E8%A1%A8%E5%85%B3%E7%B3%BB"><span class="toc-number">6.</span> <span class="toc-text">django orm中如何创建表关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">7.</span> <span class="toc-text"></span></a></li></ol>
+                                  </div>
+                              </button>
+                          
+                          
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="Back To Top" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-search-space">
+	<div class="search-container">
+		<div class="search-header">
+			<div class="search-input-container">
+				<input
+					class="search-input"
+					type="text"
+					placeholder="Search"
+					oninput="sinput();"
+				/>
+			</div>
+			<a class="search-close" onclick="sclose();">×</a>
+		</div>
+		<div class="search-body"></div>
+	</div>
+</div>
+
+    
+<script src="/lib/mdui_043tiny/mdui.js"></script>
+<script src="/lib/fancybox/fancybox.umd.js"></script>
+
+
+ 
+
+<script async src="/js/app.js?v=1675675439473"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2058306854838448" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

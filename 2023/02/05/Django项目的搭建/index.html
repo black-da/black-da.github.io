@@ -4,7 +4,7 @@
 
 <head>
     
-    <title>Django项目的搭建 - czw</title>
+    <title>Django项目的搭建和配置 - czw</title>
     <meta charset="UTF-8">
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -12,13 +12,13 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <meta name="description" content="Django创建项目 创建应用：pycharm的terminal中运行start manage.py start app01  以下操作都是在项目名文件夹下的settings.py操作的  注册应用： 123456789INSTALLED_APPS &#x3D; [    &amp;#x27;django.contrib.admin&amp;#x27;,    &amp;#x27;django.contrib.auth&amp;#x27;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Django项目的搭建">
+<meta property="og:title" content="Django项目的搭建和配置">
 <meta property="og:url" content="http://example.com/2023/02/05/Django%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%90%AD%E5%BB%BA/index.html">
 <meta property="og:site_name" content="czw">
 <meta property="og:description" content="Django创建项目 创建应用：pycharm的terminal中运行start manage.py start app01  以下操作都是在项目名文件夹下的settings.py操作的  注册应用： 123456789INSTALLED_APPS &#x3D; [    &amp;#x27;django.contrib.admin&amp;#x27;,    &amp;#x27;django.contrib.auth&amp;#x27;">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-02-05T07:46:17.205Z">
-<meta property="article:modified_time" content="2023-02-05T07:46:17.313Z">
+<meta property="article:modified_time" content="2023-02-06T09:23:43.056Z">
 <meta property="article:author" content="czw">
 <meta property="article:tag" content="code">
 <meta property="article:tag" content="知识分享">
@@ -28,13 +28,13 @@
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1675583478602">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1675675439456">
     
-    <link rel="stylesheet" href="/css/style.css?v=1675583478602">
+    <link rel="stylesheet" href="/css/style.css?v=1675675439456">
 
     
         
-            <link rel="stylesheet" href="/custom.css?v=1675583478602">
+            <link rel="stylesheet" href="/custom.css?v=1675675439456">
         
     
 <meta name="generator" content="Hexo 6.3.0"></head>
@@ -59,9 +59,9 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div><span>Articles</span>13</div>
+        <div><span>Articles</span>14</div>
         <div><span>Tags</span>6</div>
-        <div><span>Categories</span>5</div>
+        <div><span>Categories</span>6</div>
     </div>
     <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
         
@@ -155,14 +155,21 @@
 
         <li class="category-list-item">
           <a class="category-list-link" href="/categories/code/">code</a>
-          <span class="category-list-count">11</span>
+          <span class="category-list-count">12</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/code/python/django/">django</a>
+          <span class="category-list-count">2</span>
         </li>
 
         
 
         <li class="category-list-item">
           <a class="category-list-link" href="/categories/code/python/">python</a>
-          <span class="category-list-count">10</span>
+          <span class="category-list-count">11</span>
         </li>
 
         
@@ -226,7 +233,7 @@
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">Archive</h3>
     <div class="nexmoe-widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">13</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">14</span></li></ul>
     </div>
   </div>
 
@@ -241,7 +248,11 @@
       <ul>
         
           <li>
-            <a href="/2023/02/05/Django%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%90%AD%E5%BB%BA/">Django项目的搭建</a>
+            <a href="/2023/02/06/Django%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/">Django数据库操作</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/05/Django%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%90%AD%E5%BB%BA/">Django项目的搭建和配置</a>
           </li>
         
           <li>
@@ -254,10 +265,6 @@
         
           <li>
             <a href="/2023/02/05/Python%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97/">Python常用模块</a>
-          </li>
-        
-          <li>
-            <a href="/2023/02/05/%E5%8C%85%E5%92%8C%E6%A8%A1%E5%9D%97%E7%9A%84%E5%AF%BC%E5%85%A5/">包和模块的导入</a>
           </li>
         
       </ul>
@@ -316,8 +323,8 @@
   <article>
     
         <div class="nexmoe-post-cover absolute" style="padding-top: 38.333333333333336%;"> 
-            <img src="/pictures/django.jpg" alt="Django项目的搭建" loading="lazy">
-            <h1>Django项目的搭建</h1>
+            <img src="/pictures/django.jpg" alt="Django项目的搭建和配置" loading="lazy">
+            <h1>Django项目的搭建和配置</h1>
         </div>
     
     
@@ -325,7 +332,7 @@
     <div class="nexmoe-rainbow">
         <a class="nexmoefont icon-calendar-fill">2023年02月05日</a>
         
-            <a class="nexmoefont icon-appstore-fill -link" href="/categories/code/">code</a><a class="nexmoefont icon-appstore-fill -link" href="/categories/code/python/">python</a>
+            <a class="nexmoefont icon-appstore-fill -link" href="/categories/code/">code</a><a class="nexmoefont icon-appstore-fill -link" href="/categories/code/python/">python</a><a class="nexmoefont icon-appstore-fill -link" href="/categories/code/python/django/">django</a>
         
         
     </div>
@@ -345,7 +352,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">INSTALLED_APPS = [</span><br><span class="line">    <span class="string">&#x27;django.contrib.admin&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;django.contrib.auth&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;django.contrib.contenttypes&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;django.contrib.sessions&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;django.contrib.messages&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;django.contrib.staticfiles&#x27;</span>,</span><br><span class="line">  	<span class="string">&#x27;app01&#x27;</span>, <span class="comment"># INSTALLED_APPS列表里加上&#x27;app01&#x27;</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>写入templates路径：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">TEMPLATES = [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&#x27;BACKEND&#x27;</span>: <span class="string">&#x27;django.template.backends.django.DjangoTemplates&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;DIRS&#x27;</span>: [os.path.join(BASE_DIR, <span class="string">&#x27;templates&#x27;</span>)],</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">TEMPLATES = [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&#x27;BACKEND&#x27;</span>: <span class="string">&#x27;django.template.backends.django.DjangoTemplates&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;DIRS&#x27;</span>: [os.path.join(BASE_DIR, <span class="string">&#x27;templates&#x27;</span>)],</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">如果报错：Templates doesn<span class="string">&#x27;t exist. 那么可能是因为settings里面的Templates里的DIRS列表里没有写入template的路径</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>连接数据库配置</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">DATABASES = &#123;</span><br><span class="line">    <span class="string">&#x27;default&#x27;</span>: &#123;</span><br><span class="line">        <span class="string">&#x27;ENGINE&#x27;</span>: <span class="string">&#x27;django.db.backends.mysql&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;HOST&#x27;</span>: <span class="string">&#x27;127.0.0.1&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;PORT&#x27;</span>: <span class="number">3306</span>,</span><br><span class="line">        <span class="string">&#x27;USER&#x27;</span>: <span class="string">&#x27;root&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;PASSWORD&#x27;</span>: <span class="number">123</span>,</span><br><span class="line">        <span class="string">&#x27;NAME&#x27;</span>: <span class="string">&#x27;bbs&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;CHARSET&#x27;</span>: <span class="string">&#x27;utf8&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -360,6 +367,8 @@
 <h1 id="Django文件介绍"><a href="#Django文件介绍" class="headerlink" title="Django文件介绍"></a>Django文件介绍</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">-mysite项目文件夹</span><br><span class="line">  --mysite文件夹</span><br><span class="line">  	--settings.py	配置文件</span><br><span class="line">    --urls.py			路由与视图函数对应关系(路由层)</span><br><span class="line">    --wsgi.py			wsgiref模块(一般不考虑)</span><br><span class="line">  --manage.py				django的入口文件</span><br><span class="line">  --db.sqlite3			django自带的sqlite3数据库(小型数据库 功能不是很多还有bug)</span><br><span class="line">  --app01文件夹</span><br><span class="line">  	--admin.py			django后台管理</span><br><span class="line">    --apps.py			注册使用</span><br><span class="line">    --migrations文件夹		数据库迁移记录</span><br><span class="line">    --models.py		数据库相关的 模型类(orm)</span><br><span class="line">  	--tests.py			测试文件</span><br><span class="line">    --views.py			视图函数(视图层)</span><br></pre></td></tr></table></figure>
 
 <h1 id="django小白必会三板斧"><a href="#django小白必会三板斧" class="headerlink" title="django小白必会三板斧"></a>django小白必会三板斧</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">HttpResponse</span></span><br><span class="line"><span class="string">	返回字符串类型的数据</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">render</span></span><br><span class="line"><span class="string">	返回html文件的</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">redirect</span></span><br><span class="line"><span class="string">	重定向，想指定的url发送请求的</span></span><br><span class="line"><span class="string">	  return redirect(&#x27;https://www.mzitu.com/&#x27;)</span></span><br><span class="line"><span class="string">    return redirect(&#x27;/home/&#x27;)</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="静态文件配置"><a href="#静态文件配置" class="headerlink" title="静态文件配置"></a>静态文件配置</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">我们将html文件默认都放在templates文件夹下</span><br><span class="line">我们将网站所使用的静态文件默认都放在static文件夹下</span><br><span class="line"></span><br><span class="line">静态文件</span><br><span class="line">	js文件</span><br><span class="line">	css文件</span><br><span class="line">	网站用到的图片文件</span><br><span class="line">	第三方前端框架</span><br><span class="line">	...</span><br><span class="line">	拿来就可以直接使用的文件</span><br><span class="line">	</span><br><span class="line"><span class="comment"># django默认是不会自动帮你创建static文件夹 需要你自己手动创建</span></span><br><span class="line">一般情况下我们在static文件夹内还会做进一步的划分处理</span><br><span class="line">	-static</span><br><span class="line">  		--js</span><br><span class="line">    	--css</span><br><span class="line">    	--img</span><br><span class="line">    	其他第三方文件</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 静态文件配置</span></span><br><span class="line">在配置文件settings里面</span><br><span class="line">STATIC_URL = <span class="string">&#x27;/static/&#x27;</span>  <span class="comment"># 类似于访问静态文件的令牌</span></span><br><span class="line">如果你想要访问静态文件 你就必须以static开头，比如/static/bootstrap-<span class="number">3.3</span><span class="number">.7</span>-dist/js/bootstrap.<span class="built_in">min</span>.js</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">有了/static/令牌，才能从列表里面的路径从上往下依次查找指定文件</span><br><span class="line">    bootstrap-<span class="number">3.3</span><span class="number">.7</span>-dist/js/bootstrap.<span class="built_in">min</span>.js</span><br><span class="line">    列表里面的路径都没有指定文件才会报错</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string"># 静态文件配置</span></span><br><span class="line"><span class="string">STATICFILES_DIRS = [</span></span><br><span class="line"><span class="string">    os.path.join(BASE_DIR,&#x27;static&#x27;), 因为bootstrap相关文件在static里，所以可以被访问到</span></span><br><span class="line"><span class="string">    os.path.join(BASE_DIR,&#x27;static1&#x27;),</span></span><br><span class="line"><span class="string">    os.path.join(BASE_DIR,&#x27;static2&#x27;),</span></span><br><span class="line"><span class="string">]</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 静态文件动态解析，通过下列代码引入文件，即使令牌改了也不会影响文件的导入</span></span><br><span class="line">    &#123;% load static %&#125;</span><br><span class="line">    &lt;link rel=<span class="string">&quot;stylesheet&quot;</span> href=<span class="string">&quot;&#123;% static &#x27;bootstrap-3.3.7-dist/css/bootstrap.min.css&#x27; %&#125;&quot;</span>&gt;</span><br><span class="line">    &lt;script src=<span class="string">&quot;&#123;% static &#x27;bootstrap-3.3.7-dist/js/bootstrap.min.js&#x27; %&#125;&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在前期我们使用django提交post请求的时候，如果不采用csrf认证，需要取配置文件中注释掉一行代码</span></span><br><span class="line">MIDDLEWARE = [</span><br><span class="line">    <span class="string">&#x27;django.middleware.security.SecurityMiddleware&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;django.contrib.sessions.middleware.SessionMiddleware&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;django.middleware.common.CommonMiddleware&#x27;</span>,</span><br><span class="line">    <span class="comment"># &#x27;django.middleware.csrf.CsrfViewMiddleware&#x27;,  注释掉这一行</span></span><br><span class="line">    <span class="string">&#x27;  django.contrib.auth.middleware.AuthenticationMiddleware&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;django.contrib.messages.middleware.MessageMiddleware&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;django.middleware.clickjacking.XFrameOptionsMiddleware&#x27;</span>,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 
 <h3 id=""><a href="#" class="headerlink" title=""></a></h3>
     <p><img data-fancybox="gallery" src="/pictures/a2.png"  alt="/pictures/a2.png" data-caption="/pictures/a2.png" loading="lazy"></p>
@@ -402,7 +411,7 @@
                               <button class="mdui-fab catalog" style="overflow:unset;">
                                   <i class="nexmoefont icon-i-catalog"></i>
                                   <div class="nexmoe-toc">
-                                      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Django%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE"><span class="toc-number">1.</span> <span class="toc-text">Django创建项目</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Django%E6%96%87%E4%BB%B6%E4%BB%8B%E7%BB%8D"><span class="toc-number">2.</span> <span class="toc-text">Django文件介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#django%E5%B0%8F%E7%99%BD%E5%BF%85%E4%BC%9A%E4%B8%89%E6%9D%BF%E6%96%A7"><span class="toc-number">3.</span> <span class="toc-text">django小白必会三板斧</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">3.0.1.</span> <span class="toc-text"></span></a></li></ol></li></ol></li></ol>
+                                      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Django%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE"><span class="toc-number">1.</span> <span class="toc-text">Django创建项目</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Django%E6%96%87%E4%BB%B6%E4%BB%8B%E7%BB%8D"><span class="toc-number">2.</span> <span class="toc-text">Django文件介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#django%E5%B0%8F%E7%99%BD%E5%BF%85%E4%BC%9A%E4%B8%89%E6%9D%BF%E6%96%A7"><span class="toc-number">3.</span> <span class="toc-text">django小白必会三板斧</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="toc-number">4.</span> <span class="toc-text">静态文件配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">4.0.1.</span> <span class="toc-text"></span></a></li></ol></li></ol></li></ol>
                                   </div>
                               </button>
                           
@@ -439,7 +448,7 @@
 
  
 
-<script async src="/js/app.js?v=1675583478607"></script>
+<script async src="/js/app.js?v=1675675439463"></script>
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2058306854838448" crossorigin="anonymous"></script>
 
